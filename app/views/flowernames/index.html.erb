@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Flowernames</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @flowernames.each do |flowername| %>
+      <tr>
+        <td><%= flowername.name %></td>
+        <td><%= flowername.description %></td>
+        <td><%= link_to 'Show', flowername %></td>
+        <td><%= link_to 'Edit', edit_flowername_path(flowername) %></td>
+        <td><%= link_to 'Destroy', flowername, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Flowername', new_flowername_path %>
